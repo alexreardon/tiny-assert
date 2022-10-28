@@ -4,6 +4,7 @@
   "description": "A tiny assertion function",
   "type": "module",
   "exports": "./dist/assert.js",
+  "types": "./dist/assert.d.ts",
   "engines": {
     "node": ">=14.16"
   },
@@ -11,14 +12,14 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "typescript:build": "yarn tsc",
+    "typescript:build": "yarn tsc --declaration",
     "typescript:check": "yarn tsc --noEmit",
     "prettier:check": "prettier --debug-check src/**",
     "prettier:fix": "prettier --write src/**",
     "validate": "yarn prettier:check && yarn typescript:check",
     "build": "yarn build:clean && yarn typescript:build",
     "build:clean": "rimraf dist",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn validate && yarn build"
   },
   "devDependencies": {
     "prettier": "^2.7.1",
