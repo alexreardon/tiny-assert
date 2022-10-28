@@ -1,7 +1,7 @@
 {
   "name": "tiny-assert",
   "version": "0.1.0",
-  "description": "A tiny assert function",
+  "description": "A tiny assertion function",
   "type": "module",
   "exports": "./dist/assert.js",
   "engines": {
