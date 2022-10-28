@@ -2,8 +2,20 @@
   "name": "tiny-assert",
   "version": "0.1.0",
   "description": "A tiny assert function",
-  "main": "dist/assert.js",
+  "type": "module",
+  "exports": "./dist/assert.js",
+  "engines": {
+    "node": ">=14.16"
+  },
   "author": "Alex Reardon <alexrearodn@gmail.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "scripts": {
+    "build": "yarn tsc",
+    "typescript:build": "yarn tsc",
+    "typescript:check": "yarn tsc --noEmit src/*.ts test/*.ts"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
 }
