@@ -1,0 +1,9 @@
+{
+  "name": "tiny-assert",
+  "version": "0.1.0",
+  "description": "A tiny assert function",
+  "main": "dist/assert.js",
+  "author": "Alex Reardon <alexrearodn@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
