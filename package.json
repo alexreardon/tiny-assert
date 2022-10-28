@@ -7,15 +7,22 @@
   "engines": {
     "node": ">=14.16"
   },
-  "author": "Alex Reardon <alexrearodn@gmail.com>",
+  "author": "Alex Reardon <alexreardon@gmail.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "yarn tsc",
     "typescript:build": "yarn tsc",
-    "typescript:check": "yarn tsc --noEmit src/*.ts test/*.ts"
+    "typescript:check": "yarn tsc --noEmit",
+    "prettier:check": "prettier --debug-check src/**",
+    "prettier:fix": "prettier --write src/**",
+    "validate": "yarn prettier:check && yarn typescript:check",
+    "build": "yarn build:clean && yarn typescript:build",
+    "build:clean": "rimraf dist",
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
     "typescript": "^4.8.4"
   }
 }
